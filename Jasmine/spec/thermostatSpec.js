@@ -54,8 +54,16 @@ describe("Thermostat", function() {
   describe("Reset button", function(){
 
       it("reset the temperature to 20 with a reset function", function(){
-        thermostat.reset()
+        thermostat.reset();
         expect(thermostat.temperature).toEqual(20);
+      });
+  });
+
+  describe("Current energy usage", function(){
+
+      it("can ask about the thermostat current energy usage", function(){
+        thermostat.down(4);
+        expect(thermostat.currentEnergyUsage()).toEqual("low-usage");
       });
   });
 
